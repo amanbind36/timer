@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Digital Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #d9612e 0%, #ffae3c 100%);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.time {
+    display: flex;
+    font-size: 1em;
+   
+   
+}
+.s1{
+    animation: fadeIn 60s forwards, moveTime 2s reverse infinite;
+}
+.s2{
+    animation: fadeIn 60s forwards, moveTime 2s reverse infinite;
+}
+.s3{
+    animation: fadeIn 60s forwards, moveTime 2s reverse infinite;
+}
+
+.time.current {
+    font-size: 2em;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveTime {
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time future">
+            <h1>12</h1>
+            <h1>:</h1>
+            <h1>20</h1>
+            <h1>:</h1>
+            <h1 class="s3">31</h1>
+        </div>
+        <div class="time current">
+            <h1>12</h1>
+            <h1>:</h1>
+            <h1>20</h1>
+            <h1>:</h1>
+            <h1 class="s2">30</h1>
+        </div>
+        <div class="time past">
+            <h1>12</h1>
+            <h1>:</h1>
+            <h1>20</h1>
+            <h1>:</h1>
+            <h1 class="s1">29</h1>
+        </div>
+    </div>
+</body>
+</html>
